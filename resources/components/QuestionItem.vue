@@ -3,7 +3,7 @@
         <h1>{{question.question}}</h1>
         <ul>
             <li v-for="answer in question.answers">
-                <AnswerItem :answer="answer" :on-answered="onAnswerPicked" />
+                <AnswerItem :answer="answer" :on-answered="onAnswerPicked" :is-active="answerId === answer.id" />
             </li>
         </ul>
         <button @click.stop="onAnswered" :disabled="!answerId">Next</button>
@@ -39,6 +39,10 @@
                 }
 
                 this.answer(this.answerId);
+                this.reset();
+            },
+            reset() {
+                this.answerId = null;
             }
         })
     }

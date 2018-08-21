@@ -39,19 +39,6 @@ class AjaxController extends BaseAjaxController
         ];
     }
 
-    public function indexAction()
-    {
-        return [
-            'name' => '',
-            'quizes' => [
-                [
-                    'id' => 1,
-                    'name' => 'Programming'
-                ],
-            ]
-        ];
-    }
-
     public function startAction()
     {
         $quizId = $this->post->get('quizId');

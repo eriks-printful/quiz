@@ -37,12 +37,15 @@ class QuizRepository {
         return new Promise(resolve => {
             this.quizApi.post('answer', {answerId})
                 .then(response => {
-                    resolve((typeof response.data.result === 'string' ) ?
-                        response.data.result :
-                        Question.fromArray(response.data.result)
-                    )
+                    resolve(
+                        (typeof response.data.result === 'string') ?
+                            response.data.result :
+                            Question.fromArray(response.data.result)
+                    );
                 })
-                .catch(() => alert('Oh noooo!'));
+                .catch(() => {
+                    debugger;
+                })
         })
     }
 }

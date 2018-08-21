@@ -1,11 +1,9 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import * as types from './mutations.js';
-
 import QuizRepository from '../repositories/repository.quiz.js';
-
 import Quiz from '../models/model.quiz.js';
-import Question from "../models/model.question";
+import Question from "../models/model.question.js";
 
 Vue.use(Vuex);
 
@@ -73,10 +71,6 @@ export default new Vuex.Store({
                         context.commit(types.SET_QUESTION, null);
                         context.commit(types.SET_RESULTS, questionOrResults);
                     }
-                    context.commit(
-                        (questionOrResults instanceof Question) ? types.SET_QUESTION : types.SET_RESULTS,
-                        questionOrResults
-                    );
                 });
         },
         restart(context) {
