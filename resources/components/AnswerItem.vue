@@ -1,5 +1,5 @@
 <template>
-    <a href="#" @click="onClick" :class="isActive ? 'active' : ''">{{ answer.answer }}</a>
+    <a href="#" @click="onClick" :class="isActive ? baseClass + ' active' : baseClass">{{ answer.answer }}</a>
 </template>
 
 <script>
@@ -16,6 +16,11 @@
                 required: true,
             },
             isActive: Boolean,
+        },
+        data() {
+            return {
+                baseClass: 'list-group-item list-group-item-action'
+            }
         },
         methods: {
             onClick() {

@@ -1,7 +1,7 @@
 <template>
-    <div v-if="result">
-        <div>{{ result }}</div>
-        <button @click="restart">Start again</button>
+    <div v-if="result" class="container text-center">
+        <h3 class="my-4">{{ result }}</h3>
+        <button class="btn btn-success" @click="restart">Start again</button>
     </div>
 </template>
 <script>

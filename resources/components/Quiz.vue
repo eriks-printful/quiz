@@ -1,5 +1,6 @@
 <template>
-    <div class="container">
+    <div>
+        <Header />
         <Intro />
         <MainFlow />
         <Results />
@@ -10,9 +11,10 @@
     import Intro from "./Intro";
     import MainFlow from "./MainFlow";
     import Results from './Results';
+    import Header from "./Header";
 
     export default {
         name: 'Quiz',
-        components: {MainFlow, Intro, Results}
+        components: {Header, MainFlow, Intro, Results}
     }
 </script>

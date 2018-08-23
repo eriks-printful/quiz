@@ -1,12 +1,10 @@
 <template>
-    <div>
+    <div class="container mb-4">
         <h1>{{question.question}}</h1>
-        <ul>
-            <li v-for="answer in question.answers">
-                <AnswerItem :answer="answer" :on-answered="onAnswerPicked" :is-active="answerId === answer.id" />
-            </li>
-        </ul>
-        <button @click.stop="onAnswered" :disabled="!answerId">Next</button>
+        <div class="list-group my-4">
+            <AnswerItem v-for="answer in question.answers" :answer="answer" :on-answered="onAnswerPicked" :is-active="answerId === answer.id" />
+        </div>
+        <button class="btn btn-primary" @click.stop="onAnswered" :disabled="!answerId">Next</button>
     </div>
 </template>
 <script>

@@ -1,9 +1,9 @@
 <template>
     <div v-if="!activeQuestion && !result">
-        <TextInput v-model="name" label="Your name" />
-        <SelectDropdown v-model="activeQuizId" label="Pick your quiz" :options="getQuizzes()" />
-        <div>
-            <button @click="onStart">Start</button>
+        <div class="container">
+            <TextInput v-model="name" label="Your name" />
+            <SelectDropdown v-model="activeQuizId" label="Pick your quiz" :options="getQuizzes()" />
+            <button class="btn btn-primary" @click="onStart">Start</button>
         </div>
     </div>
 </template>

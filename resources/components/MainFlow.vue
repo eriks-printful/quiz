@@ -1,6 +1,5 @@
 <template>
     <div v-if="activeQuestion">
-        <div>Hello, {{name}}!</div>
         <QuestionItem />
     </div>
 </template>
